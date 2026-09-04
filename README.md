@@ -2,6 +2,13 @@
 
 A real-time chat application built with the MERN stack (MongoDB, Express, React, Node.js) and Socket.io.
 
+## Live Demo
+
+- App: https://chat-app-mern-jet.vercel.app
+- API: https://chat-app-mern-server-txt9.onrender.com/api/health
+
+The API runs on Render's free tier, which spins down after ~15 minutes of inactivity — the first request after a period of idle time may take 30-60 seconds to wake up.
+
 ## Features
 
 - User registration and login secured with JWT and bcrypt password hashing
