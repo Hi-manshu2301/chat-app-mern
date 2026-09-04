@@ -21,13 +21,14 @@ export default function ChatContainer({ contact, socket }) {
   }, [contact, user.id]);
 
   useEffect(() => {
-    if (!socket?.current) return;
-    socket.current.on("msg-receive", ({ from, message }) => {
+    const currentSocket = socket?.current;
+    if (!currentSocket) return;
+    currentSocket.on("msg-receive", ({ from, message }) => {
       if (from === contact?._id) {
         setMessages((prev) => [...prev, { fromSelf: false, message }]);
       }
     });
-    return () => socket.current?.off("msg-receive");
+    return () => currentSocket.off("msg-receive");
   }, [socket, contact]);
 
   useEffect(() => {
